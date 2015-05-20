@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://crm.gwmsystem.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://crm.gwmsystem.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://crm.gwmsystem.com">
+      <s:complexType name="ArrayOfSaleClueInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SaleClueInfo" nillable="true" type="tns:SaleClueInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SaleClueInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SaleClueInfoID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DealerID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShopID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleClueType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubmitOn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deposit" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FinalPayment" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Freight" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentState" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeOfPayment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IntentBrandID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IntentBrandName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TestdrivePlan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PurchasePlan" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gender" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Age" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSaleClueProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SaleClueProductInfo" nillable="true" type="tns:SaleClueProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SaleClueProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SaleClueProductInfoID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaleClueInfoID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubOrderType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivitiesType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivitiesName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivitiesDuration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfigurationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExportVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnnualPattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gearbox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EngineCapacity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InteriorColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kind" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pattern" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Configuration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EngineType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Option" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ECPOption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ECPDefaultOption" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSaleClueProductBoutique">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SaleClueProductBoutique" nillable="true" type="tns:SaleClueProductBoutique" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SaleClueProductBoutique">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SaleClueProductBoutiqueID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaleClueInfoID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubOrderType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivitiesType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivitiesName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActivitiesDuration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKUNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKUFrontName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomSoapHeader" type="tns:CustomSoapHeader" />
+      <s:complexType name="CustomSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserIdentity" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="HelloWorldResult" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveSaleClueSourceWithJsonSoapIn">
+    <wsdl:part name="saleClueJson" type="s:string" />
+    <wsdl:part name="productJson" type="s:string" />
+    <wsdl:part name="productBoutiqueJson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveSaleClueSourceWithJsonSoapOut">
+    <wsdl:part name="SaveSaleClueSourceWithJsonResult" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="SaveSaleClueSourceSoapIn">
+    <wsdl:part name="saleClueList" type="tns:ArrayOfSaleClueInfo" />
+    <wsdl:part name="productList" type="tns:ArrayOfSaleClueProductInfo" />
+    <wsdl:part name="ProductBoutiqueList" type="tns:ArrayOfSaleClueProductBoutique" />
+  </wsdl:message>
+  <wsdl:message name="SaveSaleClueSourceSoapOut">
+    <wsdl:part name="SaveSaleClueSourceResult" type="s:int" />
+  </wsdl:message>
+  <wsdl:message name="SaveSaleClueSourceCustomSoapHeader">
+    <wsdl:part name="CustomSoapHeader" element="tns:CustomSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="SaleClueServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleClueSourceWithJson">
+      <wsdl:input message="tns:SaveSaleClueSourceWithJsonSoapIn" />
+      <wsdl:output message="tns:SaveSaleClueSourceWithJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleClueSource">
+      <wsdl:input message="tns:SaveSaleClueSourceSoapIn" />
+      <wsdl:output message="tns:SaveSaleClueSourceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SaleClueServiceSoap" type="tns:SaleClueServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://crm.gwmsystem.com/HelloWorld" style="rpc" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleClueSourceWithJson">
+      <soap:operation soapAction="http://crm.gwmsystem.com/SaveSaleClueSourceWithJson" style="rpc" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleClueSource">
+      <soap:operation soapAction="http://crm.gwmsystem.com/SaveSaleClueSource" style="rpc" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="http://crm.gwmsystem.com" />
+        <soap:header message="tns:SaveSaleClueSourceCustomSoapHeader" part="CustomSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SaleClueServiceSoap12" type="tns:SaleClueServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://crm.gwmsystem.com/HelloWorld" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleClueSourceWithJson">
+      <soap12:operation soapAction="http://crm.gwmsystem.com/SaveSaleClueSourceWithJson" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSaleClueSource">
+      <soap12:operation soapAction="http://crm.gwmsystem.com/SaveSaleClueSource" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="literal" namespace="http://crm.gwmsystem.com" />
+        <soap12:header message="tns:SaveSaleClueSourceCustomSoapHeader" part="CustomSoapHeader" use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" namespace="http://crm.gwmsystem.com" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SaleClueService">
+    <wsdl:port name="SaleClueServiceSoap" binding="tns:SaleClueServiceSoap">
+      <soap:address location="http://10.1.129.49:8003/saleclueservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SaleClueServiceSoap12" binding="tns:SaleClueServiceSoap12">
+      <soap12:address location="http://10.1.129.49:8003/saleclueservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
