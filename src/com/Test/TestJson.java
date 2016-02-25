@@ -1,6 +1,6 @@
 package com.Test;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 import net.sf.json.*;
 public class TestJson {
@@ -43,14 +43,39 @@ public class TestJson {
 		System.out.println(jo.toString());
 		*/
 		jo = JSONObject.fromObject("{\"resultCode\": 1,\"data\":[{\"SubEcpNumber\":\"2015042206080091\"},{\"SubEcpNumber\":\"2015042206080090\"},{\"SubEcpNumber\":\"2015042206080092\"},{\"SubEcpNumber\":\"2015042206080093\"}]}");
+		
+		
 		System.out.println(jo.toString());
+		
+		String jsonStr = MapToJson();
+		JsonToMap(jsonStr);
 	}
+	public static String MapToJson(){
+		Map<String,Object> mp= new HashMap<String,Object>();
+		ObjectA oa = new ObjectA();
+		oa.setFileExtension("ext");
+		oa.setFileName(null);
+		oa.setFileSize(10);
+		oa.setLastModifiedOn(new Date().toString());
+		mp.put("a", oa);
+		JSONObject jo=JSONObject.fromObject(mp);
+		System.out.println("MapToJson:"+jo.toString());
+		return jo.toString();
+	}
+	public static void JsonToMap(String JsonString){
+		JSONObject jo=JSONObject.fromObject(JsonString);
+		Map<String,Object> mp= (Map<String,Object>)JSONObject.toBean(jo, Map.class);
+		ObjectA oa = (ObjectA)JSONObject.toBean(JSONObject.fromObject(mp.get("a")), ObjectA.class);
+		
+		System.out.println("JosnToMap:"+ oa.toString());
+	}
+	
 	public static class ObjectA
 	{
 		private String fileName;
 		private int fileSize;
 		private String fileExtension;
-		private Date lastModifiedOn;
+		private String lastModifiedOn;
 		public String getFileName() {
 			return fileName;
 		}
@@ -69,11 +94,16 @@ public class TestJson {
 		public void setFileExtension(String fileExtension) {
 			this.fileExtension = fileExtension;
 		}
-		public Date getLastModifiedOn() {
-			return lastModifiedOn;
+		public String getLastModifiedOn() {
+			return lastModifiedOn.toString();
 		}
-		public void setLastModifiedOn(Date lastModifiedOn) {
+		public void setLastModifiedOn(String lastModifiedOn) {
 			this.lastModifiedOn = lastModifiedOn;
+		}
+		@Override
+		public String toString(){
+			return this.getFileName() + this.getFileExtension() + ","
+					+ this.getFileSize() + "," + this.getLastModifiedOn();
 		}
 	}
 
