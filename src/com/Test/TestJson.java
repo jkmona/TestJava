@@ -14,9 +14,11 @@ public class TestJson {
 		
 		//TestJSONArrayAndList();
 		
-		TestMapAndJson();
+		//TestMapAndJson();
 		
 		//TestJSONArrayAndList();
+		
+		testJSONCaseSensitive();
 	}
 	public static void TestStringToJSONObject(){
 		String str = "{\"resultCode\": 1,\"data\":[{\"SubEcpNumber\":\"2015042206080091\"},{\"SubEcpNumber\":\"2015042206080090\"},{\"SubEcpNumber\":\"2015042206080092\"},{\"SubEcpNumber\":\"2015042206080093\"}]}";
@@ -107,6 +109,27 @@ public class TestJson {
 		List cli = JSONArray.toList(ja, new UserFile(), new JsonConfig());
 		System.out.println("JSONArrayToLlist的结果：" + (cli == null ? "null" : cli.toString()));
 	}
+	
+	public static void testJSONCaseSensitive(){
+		SaleClueProductInfo sc = new SaleClueProductInfo();
+		sc.setSaleClueProductInfoID("4145464f8wqefqwetq");// 必填
+		sc.setSaleClueInfoID("ergwergwerh34w5h3w45h45");// 必填
+		sc.setSubOrderType(0);// 必填
+		sc.setName("哈弗H9");
 
+		sc.setKind("哈弗H9");// 必填
+		// sc.setCarType(getKeyParam(attrList,
+		// Constants.KEY_PARAM_CAR_TYPE));// 必填
+		sc.setCarType("尊贵型");// 必填
+		sc.setPattern("2016款");// 必填
+		sc.setConfiguration("两驱");// 必填
+		sc.setEngineType("欧5");// 必填
+		sc.setConfigurationNumber("DFADF232");// 必填
+		sc.setExportVersion("国内版");// 必填
+		sc.setECpDefaultOption("1231231243");
+		sc.setEcpOption("ASDFASDFJKWEJOI2343KL4J2"); // 该选装为整车商品数据
+		JSONObject jo=JSONObject.fromObject(sc);
+		System.out.println(jo.toString());
+	}
 
 }
