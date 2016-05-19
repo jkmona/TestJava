@@ -6,7 +6,7 @@ import net.sf.json.*;
 public class TestJson {
 
 	public static void main(String[] args) {
-		//TestStringToJSONObject();
+		TestStringToJSONObject();
 		
 		//TestNullValueInJson();
 		
@@ -18,7 +18,7 @@ public class TestJson {
 		
 		//TestJSONArrayAndList();
 		
-		testJSONCaseSensitive();
+		//testJSONCaseSensitive();
 	}
 	public static void TestStringToJSONObject(){
 		String str = "{\"resultCode\": 1,\"data\":[{\"SubEcpNumber\":\"2015042206080091\"},{\"SubEcpNumber\":\"2015042206080090\"},{\"SubEcpNumber\":\"2015042206080092\"},{\"SubEcpNumber\":\"2015042206080093\"}]}";
@@ -27,6 +27,14 @@ public class TestJson {
 		JSONObject jo = JSONObject.fromObject(str);
 		System.out.println("getString():" + jo.getString("resultCode"));
 		System.out.println("getJSONArray():" + jo.getJSONArray("data").toString());
+		
+		str = null;
+		jo = JSONObject.fromObject(str);
+		System.out.println("String str = " + str +"; jo:"+jo);
+		//报错
+		str = "";
+		jo = JSONObject.fromObject(str);
+		System.out.println("String str = " + str +"; jo:"+jo);
 	}
 	
 	public static void TestNullValueInJson(){

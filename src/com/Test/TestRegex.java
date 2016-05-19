@@ -32,6 +32,9 @@ public class TestRegex {
 		System.out.println(s +":" + validPasswordComplex(s));
 		s = "_________";
 		System.out.println(s +":" + validPasswordComplex(s));
+		
+		String phone = "18145698963";
+		System.out.println(phone +":" + phone.matches("^((13[0-9])|(14[0-9])|(15[^4,\\D])|(18[0-9])|(17[0-9]))\\d{8}$"));
 	}
 	public static boolean validIdentityCard(String cardNo){
 		if(cardNo == null || cardNo.length() == 0 || (cardNo.length() != 15 && cardNo.length() != 18)) {

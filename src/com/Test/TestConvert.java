@@ -15,6 +15,10 @@ public class TestConvert {
 		
 		Long l = (Long)obj;
 		System.out.println(l instanceof Long);
+		String s = null;
+		System.out.println(s + "asdf");
+		
+		System.out.println("\\%s:" + String. format("a=%s", null));
 	}
 
 }
