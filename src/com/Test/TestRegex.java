@@ -6,6 +6,31 @@ public class TestRegex {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//testIdentityCard();
+		
+		//testPhone();
+		
+		testNumber();
+		
+		
+	}
+	public static void testNumber(){
+		String n = "18145698963";
+		System.out.println(n +":" + n.matches("^[1-9]{1}[0-9]*$"));
+		
+		n = "1";
+		System.out.println(n  +":" + n .matches("^[1-9]{1}[0-9]*$"));
+		
+		n = "0";
+		System.out.println(n  +":" + n .matches("^[1-9]{1}[0-9]*$"));
+		
+		n = "034232";
+		System.out.println(n  +":" + n .matches("^[1-9]{1}[0-9]*$"));
+		
+		n = "22131423432543534534034232";
+		System.out.println(n  +":" + n .matches("^[1-9]{1}[0-9]*$"));
+	}
+	public static void testIdentityCard(){
 		String s = "13022919851029183X";
 		System.out.println("13022919851029183X:" + validIdentityCard(s));
 		s = "13022919851029183";
@@ -14,7 +39,9 @@ public class TestRegex {
 		System.out.println("440901197709194316:"+ validIdentityCard(s));
 		s = "130181198309157938";
 		System.out.println("130181198309157938:"+ validIdentityCard(s));
-		s = "123456";
+	}
+	public static void testPasswordComplex(){
+		String s = "123456";
 		System.out.println("123456:"+ validPasswordComplex(s));
 		s = "123456789";
 		System.out.println(s +":" + validPasswordComplex(s));
@@ -32,9 +59,14 @@ public class TestRegex {
 		System.out.println(s +":" + validPasswordComplex(s));
 		s = "_________";
 		System.out.println(s +":" + validPasswordComplex(s));
-		
-		String phone = "18145698963";
-		System.out.println(phone +":" + phone.matches("^((13[0-9])|(14[0-9])|(15[^4,\\D])|(18[0-9])|(17[0-9]))\\d{8}$"));
+	}
+	public static void testPhone(){
+		String s = "18145698963";
+		System.out.println(s +":" + validPhone(s));
+		s = "12145698963";
+		System.out.println(s +":" + validPhone(s));
+		s = "17745698963";
+		System.out.println(s +":" + validPhone(s));
 	}
 	public static boolean validIdentityCard(String cardNo){
 		if(cardNo == null || cardNo.length() == 0 || (cardNo.length() != 15 && cardNo.length() != 18)) {
@@ -64,5 +96,16 @@ public class TestRegex {
 		}else{
 			return false;
 		}
+	}
+	public static boolean validPhone(String phone){
+		if(phone == null){
+			return false;
+		}
+		int size = phone.length();
+		if(size == 0 || size < 8) {
+			return false;
+		}
+		return phone.matches("^((13[0-9])|(14[0-9])|(15[^4,\\D])|(18[0-9])|(17[0-9]))\\d{8}$");
+		
 	}
 }

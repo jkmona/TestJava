@@ -18,7 +18,11 @@ public class TestConvert {
 		String s = null;
 		System.out.println(s + "asdf");
 		
-		System.out.println("\\%s:" + String. format("a=%s", null));
+		System.out.println(String. format("a=%s", null));
+		
+		System.out.println(String. format("a=%s", "12312"));
+		System.out.println(String. format("a=%s", 12312));
+		System.out.println(String. format("a=%d", 12312));
 	}
 
 }
