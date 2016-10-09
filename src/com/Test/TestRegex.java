@@ -10,8 +10,9 @@ public class TestRegex {
 		
 		//testPhone();
 		
-		testNumber();
+		//testNumber();
 		
+		testLoginName();
 		
 	}
 	public static void testNumber(){
@@ -60,6 +61,35 @@ public class TestRegex {
 		s = "_________";
 		System.out.println(s +":" + validPasswordComplex(s));
 	}
+	public static void testLoginName(){
+		System.out.println("-------test login name::");
+		String s = "123456";
+		System.out.println("123456:"+ validLoginName(s));
+		s = "123456789";
+		System.out.println(s +":" + validLoginName(s));
+		s = "bav123456789";
+		System.out.println(s +":" + validLoginName(s));
+		s = "bavasdfasdfd";
+		System.out.println(s +":" + validLoginName(s));
+		s = "bavadfa@fd";
+		System.out.println(s +":" + validLoginName(s));
+		s = "......._@@@";
+		System.out.println(s +":" + validLoginName(s));
+		s = "bava$dfa@f#d";
+		System.out.println(s +":" + validLoginName(s));
+		s = "bavadfa_fd.com";
+		System.out.println(s +":" + validLoginName(s));
+		s = "bavadfa_fd_com";
+		System.out.println(s +":" + validLoginName(s));
+		s = "_________";
+		System.out.println(s +":" + validLoginName(s));
+		//半角空格
+		s = "bavadfa_fd .com ";
+		System.out.println(s +":" + validLoginName(s));
+		//全角空格
+		s = "bavadfa_fd　.com";
+		System.out.println(s +":" + validLoginName(s));
+	}
 	public static void testPhone(){
 		String s = "18145698963";
 		System.out.println(s +":" + validPhone(s));
@@ -97,6 +127,23 @@ public class TestRegex {
 			return false;
 		}
 	}
+	public static boolean validLoginName(String source){
+		if(source == null){
+			return false;
+		}
+		int len = source.length();
+		if(len == 0 || len < 4 || len>20) {
+			return false;
+		}
+		if(source.matches("^[0-9]*$") || source.matches("^[@_.]*$")){
+			return false;
+		}
+		if(source.matches("^[A-Za-z0-9_\u4E00-\u9FA5]{4,20}$")){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	public static boolean validPhone(String phone){
 		if(phone == null){
 			return false;
@@ -107,5 +154,11 @@ public class TestRegex {
 		}
 		return phone.matches("^((13[0-9])|(14[0-9])|(15[^4,\\D])|(18[0-9])|(17[0-9]))\\d{8}$");
 		
+	}
+	public static boolean isFloatNumeric(String str){ 
+		if(str ==null || str.length()==0){
+			return false;
+		}
+	    return str.matches("^([1-9]+|0)\\.?[0-9]+$");
 	}
 }

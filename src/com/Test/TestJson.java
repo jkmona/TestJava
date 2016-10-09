@@ -6,7 +6,8 @@ import net.sf.json.*;
 public class TestJson {
 
 	public static void main(String[] args) {
-		TestStringToJSONObject();
+		TestGetJson();
+		//TestStringToJSONObject();
 		
 		//TestNullValueInJson();
 		
@@ -19,6 +20,25 @@ public class TestJson {
 		//TestJSONArrayAndList();
 		
 		//testJSONCaseSensitive();
+	}
+	public static void TestGetJson(){
+		JSONArray ja = new JSONArray();
+		JSONObject jo = new JSONObject();
+		
+		jo.put("fileName", null);
+		jo.put("filesize", 2);
+		jo.put("fileExt","exe");
+		ja.add(jo);
+		
+		jo = new JSONObject();
+		jo.put("fileName", "");
+		jo.put("filesize", 2);
+		jo.put("fileExt", null);
+		jo.put("lastModifiedOn", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+		ja.add(jo);
+		ja.add("");
+		System.out.println("JSONArray::" + ja.toString());
+		System.out.println("JSONObject get:" + ja.optJSONObject(2));
 	}
 	public static void TestStringToJSONObject(){
 		String str = "{\"resultCode\": 1,\"data\":[{\"SubEcpNumber\":\"2015042206080091\"},{\"SubEcpNumber\":\"2015042206080090\"},{\"SubEcpNumber\":\"2015042206080092\"},{\"SubEcpNumber\":\"2015042206080093\"}]}";
