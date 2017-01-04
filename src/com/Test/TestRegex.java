@@ -5,14 +5,17 @@ import java.util.regex.Pattern;
 public class TestRegex {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		/*String s = "asdf\nasdf\n";
+		System.out.println(s);
+		System.out.print(s.replaceAll("\\n", ""));*/
+		System.out.println("18145698963_hfhf".matches("^((13[0-9])|(14[0-9])|(15[^4,\\D])|(18[0-9])|(17[0-9]))\\d{8}\\w*$"));
 		//testIdentityCard();
 		
 		//testPhone();
 		
 		//testNumber();
 		
-		testLoginName();
+		//testLoginName();
 		
 	}
 	public static void testNumber(){
