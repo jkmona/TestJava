@@ -6,7 +6,7 @@ import net.sf.json.*;
 public class TestJson {
 
 	public static void main(String[] args) {
-		TestGetJson();
+		//TestGetJson();
 		//TestStringToJSONObject();
 		
 		//TestNullValueInJson();
@@ -15,7 +15,7 @@ public class TestJson {
 		
 		//TestJSONArrayAndList();
 		
-		//TestMapAndJson();
+		TestMapAndJson();
 		
 		//TestJSONArrayAndList();
 		
