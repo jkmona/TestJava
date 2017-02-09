@@ -17,6 +17,8 @@ public class TestRegex {
 		
 		//testLoginName();
 		
+		testFloat();
+		System.exit(0);
 	}
 	public static void testNumber(){
 		String n = "18145698963";
@@ -101,6 +103,22 @@ public class TestRegex {
 		s = "17745698963";
 		System.out.println(s +":" + validPhone(s));
 	}
+	public static void testFloat(){
+		String s = "0.12231";
+		System.out.println(s +":" + isFloatNumeric(s));
+		s = "1.222";
+		System.out.println(s +":" + isFloatNumeric(s));
+		s = "023.12312";
+		System.out.println(s +":" + isFloatNumeric(s));
+		s = "02312312";
+		System.out.println(s +":" + isFloatNumeric(s));
+		s = "312312";
+		System.out.println(s +":" + isFloatNumeric(s));
+		s = "1";
+		if(s == null || (!s.matches("^\\d+") && !s.matches("^([1-9]+|0)\\.?[0-9]+$"))){
+			System.out.println(s +":" +"金额不是合法数字");
+		}
+	}
 	public static boolean validIdentityCard(String cardNo){
 		if(cardNo == null || cardNo.length() == 0 || (cardNo.length() != 15 && cardNo.length() != 18)) {
 			return false;
@@ -162,6 +180,6 @@ public class TestRegex {
 		if(str ==null || str.length()==0){
 			return false;
 		}
-	    return str.matches("^([1-9]+|0)\\.?[0-9]+$");
+	    return str.matches("^([1-9]+|0)\\.[0-9]+$");
 	}
 }
