@@ -6,6 +6,7 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class TestMD5 {
@@ -15,7 +16,7 @@ public class TestMD5 {
 		
 		System.out.println("         MD5Encode::" + MD5Encode(data));
 		System.out.println("DigestUtils.md5Hex::" + DigestUtils.md5Hex(data));
-		
+		//Base64.encodeBase64(binaryData)
 		System.out.println("         MD5Encode(\"\")::" + MD5Encode(""));
 		System.out.println("DigestUtils.md5Hex(\"\")::" + DigestUtils.md5Hex(""));
 		
